@@ -31,7 +31,6 @@ public class OwnerService {
         return ownerRepository.findById(id);
     }
 
-
         //kontroler - komunikacja z przeglądarką
         //serwis - logika biznesowa
         //repository - komunikacja z baza danych

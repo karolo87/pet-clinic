@@ -5,25 +5,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Owner {
+public class Pet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String firstName;
-    private String lastName;
-    private String address;
-    private String city;
-    private String phone;
+    private String name;
+    private String type;
 
-    @OneToMany(mappedBy = "owner")
-    private List<Pet> pet;
-
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    private Owner owner;
 }

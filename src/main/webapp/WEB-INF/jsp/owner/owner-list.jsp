@@ -9,9 +9,9 @@
     <title>Owners list</title>
 </head>
 <body>
-<%@include file="fragments/header.jspf" %>
+<%@include file="../fragments/header.jspf" %>
 
-
+<h2>Owners list</h2>
     <table>
         <tr>
             <th>Id</th>
@@ -32,7 +32,10 @@
                 <th><c:out value="${owner.address}" /></th>
                 <th><c:out value="${owner.city}" /></th>
                 <th><c:out value="${owner.phone}" /></th>
-                <th><a href="delete-owner?id=${owner.id}">Usuń</a></th>
+                <th>
+                    <a href="delete-owner?id=${owner.id}">Usuń</a>
+                    <a href="edit-owner?id=${owner.id}">Edytuj</a>
+                </th>
             </tr>
         </c:forEach>
     </table>

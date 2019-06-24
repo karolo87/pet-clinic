@@ -27,7 +27,7 @@ public class OwnerController {
     public String addNewOwner(Model model) {
 
         model.addAttribute("newOwner", new Owner());
-        return "add-owner";
+        return "owner/add-owner";
     }
 
     @PostMapping("/add-owner")
@@ -41,22 +41,29 @@ public class OwnerController {
     @GetMapping("/owner-list")
     public String getAllOwners(Model model) {
         model.addAttribute("ownerList", ownerService.getAllOwners());
-        return "owner-list";
+        return "owner/owner-list";
     }
 
     @GetMapping("/delete-owner")
     public String deleteOwner(@RequestParam("id") Long id) {
         ownerService.deleteOwner(id);
-        return "delete-owner";
+        return "owner/delete-owner";
     }
 
     @GetMapping("/edit-owner")
-    public String editOwner(@RequestParam("id") Long id) {
+    public String editOwner(@RequestParam("id") Long id, Model model) {
         Optional<Owner> foundOwner = ownerService.findOwnerById(id);
         if (foundOwner.isPresent()) {
-            return "edit-owner";
+            model.addAttribute("owner", foundOwner);
+            return "owner/edit-owner";
         }
-        return "add-owner";
+        return "owner/add-owner";
+    }
+
+    @PostMapping("/edit-owner")
+    public String editOwnerPost(@ModelAttribute("owner") Owner owner) {
+        ownerService.createOwner(owner);
+        return "redirect:/owner-list";
     }
 }
 

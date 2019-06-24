@@ -8,7 +8,7 @@
     <title>Add owner</title>
 </head>
 <body>
-<%@include file="fragments/header.jspf" %>
+<%@include file="../fragments/header.jspf" %>
 
 <table>
 
