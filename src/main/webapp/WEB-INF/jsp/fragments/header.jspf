@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add animal</title>
+</head>
+<body>
+
+<h3>Pet Clinic</h3>
+
+<menu>
+    <a href="add-owner">Add owner</a> |
+    <a href="owner-list">Owner list</a>
+</menu>
+
+</body>
+</html>
