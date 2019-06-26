@@ -25,13 +25,13 @@
 
         <c:forEach items="${ownerList}" var="owner">
 
-            <tr>
+            <tr><a href="owner-panel">
                 <th><c:out value="${owner.id}" /></th>
                 <th><c:out value="${owner.firstName}" /></th>
                 <th><c:out value="${owner.lastName}" /></th>
                 <th><c:out value="${owner.address}" /></th>
                 <th><c:out value="${owner.city}" /></th>
-                <th><c:out value="${owner.phone}" /></th>
+                <th><c:out value="${owner.phone}" /></th></a>
                 <th>
                     <a href="delete-owner?id=${owner.id}">Usuń</a>
                     <a href="edit-owner?id=${owner.id}">Edytuj</a>

@@ -2,6 +2,7 @@ package com.petclinic.pet_clinic.service;
 
 import com.petclinic.pet_clinic.domain.Owner;
 import com.petclinic.pet_clinic.domain.OwnerRepository;
+import com.petclinic.pet_clinic.domain.Pet;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +32,5 @@ public class OwnerService {
         return ownerRepository.findById(id);
     }
 
-        //kontroler - komunikacja z przeglądarką
-        //serwis - logika biznesowa
-        //repository - komunikacja z baza danych
+
 }

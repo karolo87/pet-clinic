@@ -4,15 +4,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add animal</title>
+    <title>Dodaj zwierzaka</title>
 </head>
 <body>
 
 <h3>Pet Clinic</h3>
 
 <menu>
-    <a href="add-owner">Add owner</a> |
-    <a href="owner-list">Owner list</a>
+    <a href="/">Strona główna</a>
+    <a href="add-owner">Dodaj właściciela</a> |
+    <a href="owner-list">Lista właścicieli</a> ||
+    <a href="add-pet">Dodaj zwierzaka</a>
 </menu>
 
 </body>

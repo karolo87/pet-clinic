@@ -14,23 +14,23 @@
 
     <form:form action="/add-owner" method="post" modelAttribute="newOwner">
         <tr>
-            <th>First name:</th>
+            <th>Imię:</th>
             <th><form:input path="firstName"/></th>
         </tr>
         <tr>
-            <th>Last name:</th>
+            <th>Nazwisko:</th>
             <th><form:input path="lastName"/></th>
         </tr>
         <tr>
-            <th>Address:</th>
+            <th>Adres:</th>
             <th><form:input path="address"/></th>
         </tr>
         <tr>
-            <th>City:</th>
+            <th>Miasto:</th>
             <th><form:input path="city"/></th>
         </tr>
         <tr>
-            <th>Phone:</th>
+            <th>Telefon:</th>
             <th><form:input path="phone"/></th>
         </tr>
         <tr>

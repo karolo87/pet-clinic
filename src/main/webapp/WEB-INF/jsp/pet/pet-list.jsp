@@ -6,12 +6,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Usunięto właściciela</title>
+    <title>Dodaj zwierzaka</title>
 </head>
 <body>
 <%@include file="../fragments/header.jspf" %>
 
-Usunięto właściciela!
+<c:forEach var="pet" items="${petsList}">
+    <c:out value="${pet.name}" />
+    <c:out value="${pet.type}" />
+    <c:out value="${pet.yearOfBirth}" />
+</c:forEach>
 
 </body>
 </html>
