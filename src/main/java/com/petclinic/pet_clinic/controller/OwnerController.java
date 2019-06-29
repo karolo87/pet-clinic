@@ -51,12 +51,19 @@ public class OwnerController {
     }
 
     @GetMapping("/edit-owner")
-    public String editOwner(@RequestParam("id") Long id) {
+    public String editOwner(@RequestParam("id") Long id, Model model) {
         Optional<Owner> foundOwner = ownerService.findOwnerById(id);
         if (foundOwner.isPresent()) {
+            model.addAttribute("editedOwner", foundOwner);
             return "edit-owner";
         }
-        return "add-owner";
+        return "redirect:/add-owner";
+    }
+
+    @PostMapping("/edit-owner")
+    public String editOwnerPost(Owner owner) {
+        ownerService.createOwner(owner);
+        return "redirect:/owner-list";
     }
 }
 
