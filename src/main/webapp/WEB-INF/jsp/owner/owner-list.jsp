@@ -9,7 +9,7 @@
     <title>Owners list</title>
 </head>
 <body>
-<%@include file="fragments/header.jspf" %>
+<%@include file="../fragments/header.jspf" %>
 
 
     <table>
@@ -32,7 +32,26 @@
                 <th><c:out value="${owner.address}" /></th>
                 <th><c:out value="${owner.city}" /></th>
                 <th><c:out value="${owner.phone}" /></th>
-                <th><a href="delete-owner?id=${owner.id}">Usuń</a></th>
+                <th><a href="owner/delete/${owner.id}">Usuń</a></th>
+                <th><a href="edit-owner/${owner.id}">Edytuj</a></th>
+                <th><a href="add-pet/${owner.id}">Dodaj zwierzaka</a></th>
+                <th><a href="owner/pet-list/${owner.id}">Pokaż zwierzaki</a></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th colspan="3" align="left">
+                    <c:forEach items="${owner.petList}" var="pet">
+                        ${pet.id}
+                        ${pet.name}
+                        ${pet.birthDate}
+                        ${pet.type} |
+                        <a href="/edit-pet/${pet.owner.id}/${pet.id}">Edytuj</a>
+                        <a href="/add-visit/${pet.id}">Dodaj wizytę</a>
+                        <a href="/visits/${pet.id}">Wizyty</a>
+                        <br />
+                    </c:forEach>
+
+                </th>
             </tr>
         </c:forEach>
     </table>

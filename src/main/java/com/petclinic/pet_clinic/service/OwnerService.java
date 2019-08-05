@@ -1,7 +1,7 @@
 package com.petclinic.pet_clinic.service;
 
-import com.petclinic.pet_clinic.domain.Owner;
-import com.petclinic.pet_clinic.domain.OwnerRepository;
+import com.petclinic.pet_clinic.domain.model.Owner;
+import com.petclinic.pet_clinic.domain.repository.OwnerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +24,7 @@ public class OwnerService {
     }
 
     public void deleteOwner(Long id) {
+
         ownerRepository.deleteById(id);
     }
 
@@ -31,6 +32,9 @@ public class OwnerService {
         return ownerRepository.findById(id);
     }
 
+    public List<Owner> findOwnerByLastName(String lastName){
+        return ownerRepository.findAllByLastNameContaining(lastName);
+    }
 
         //kontroler - komunikacja z przeglądarką
         //serwis - logika biznesowa

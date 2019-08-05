@@ -9,7 +9,7 @@
     <title>Owner deleted</title>
 </head>
 <body>
-<%@include file="fragments/header.jspf" %>
+<%@include file="../fragments/header.jspf" %>
 
 Usunięto właściciela!
 

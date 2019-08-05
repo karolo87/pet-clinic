@@ -8,12 +8,12 @@
     <title>Add owner</title>
 </head>
 <body>
-<%@include file="fragments/header.jspf" %>
+<%@include file="../fragments/header.jspf" %>
 
 <table>
 
     <form:form action="/add-owner" method="post" modelAttribute="newOwner">
-        <tr>
+\        <tr>
             <th>First name:</th>
             <th><form:input path="firstName"/></th>
         </tr>
